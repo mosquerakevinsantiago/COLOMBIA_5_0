@@ -13,13 +13,17 @@ if (btnInfo) {
     });
 }
 
-const cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".card, .tema-card");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("show");
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+
+setTimeout(() => {
+    cards.forEach(card => card.classList.add("show"));
+}, 1500);
 
 cards.forEach(card => observer.observe(card));
 
