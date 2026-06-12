@@ -2,13 +2,15 @@
 
 // ── Idioma ────────────────────────────────────────────────────
 function setLang(lang) {
+  alert("Idioma: " + lang);
+
   document.documentElement.lang = lang;
-  localStorage.setItem('col50_lang', lang);
 
   document.querySelectorAll('[data-es]').forEach(function(el) {
     var text = el.getAttribute('data-' + lang);
     if (text !== null) el.innerHTML = text;
   });
+}
 
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     var isActive = btn.id === 'btn-' + lang;
