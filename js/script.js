@@ -38,5 +38,17 @@ function imgErr(img) {
                                                                                                                                                                                                                             if (e.altKey && e.key.toLowerCase() === 'l') {
                                                                                                                                                                                                                                         setLang(currentLang === 'es' ? 'en' : 'es');
                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                    });
+                                                                                                                                                                                                                                function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const enlaces = document.querySelectorAll("#menu a, #menu button");
+
+    enlaces.forEach(item => {
+        item.addEventListener("click", () => {
+            document.getElementById("menu").classList.remove("active");
+        });
+    });
+});
+                                                                                                                                                                                                                                                    });
